@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<!-- Access Django translation tags -->
+{% load i18n %}
+        
+<html>
+    <head>
+        
+        <!-- Basic -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+
+        <title>Olissipa</title>   
+
+        <meta name="keywords" content="Olissipa" />
+        <meta name="description" content="Olissipa">
+        <meta name="author" content="Olissipa">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href='{% static "/img/olissipa.png" %}' />
+        <link rel="apple-touch-icon" href='{% static "/img/olissipa.png" %}'>
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href='{% static "/vendor/bootstrap/css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/vendor/font-awesome/css/font-awesome.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/vendor/simple-line-icons/css/simple-line-icons.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/vendor/owl.carousel/assets/owl.carousel.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/vendor/owl.carousel/assets/owl.theme.default.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/vendor/magnific-popup/magnific-popup.min.css" %}'>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href='{% static "/css/theme.css" %}'>
+
+        <!-- Skin CSS -->
+        <link rel="stylesheet" href='{% static "/css/linguateca.css" %}'> 
+
+        <!-- Demo CSS -->
+        <link rel="stylesheet" href='{% static "/css/demo-linguateca.css" %}'>
+  
+
+    <!-- load css for cubeportfolio -->
+        <link rel="stylesheet" type="text/css" href='{% static "/plugins/cubeportfolio/cubeportfolio/css/cubeportfolio.css" %}'>
+
+    <!-- Head Libs -->
+    <script src='{% static "/vendor/modernizr/modernizr.min.js" %}'></script>
+
+    <!-- script to handle the waiting function -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+           var myVar;
+         $( "#myDiv" ).click(function() {
+            myFunction(this);
+        });
+
+         function myFunction(div) {
+         $("#loader").toggle();
+         $(div).toggle();
+
+         }
+
+           
+        });
+    </script>
+
+
+  </head>
+
+  
+
+<body>
+
+     <!-- sdiv for the waiting function -->   
+    <div id="loader" style="display:none;background:rgba(255,255,255,0.8;);width:100%;height:50%"><div style="margin-top:10%;">AGUARDANDO ...<br>A treinar o modelo<img src='{% static "/img/loader.gif" %}' style="margin:0 auto;display:table;width:100px;"></div></div>
+
+
+    <div class="body" style="">
+      
+
+
+
+        <div id="wrapper">
+            <div class="overlay"></div>
+    
+            <!-- Topbar menu -->
+            <nav class="navbar navbar-default navbar-static-top" >
+
+                <ul class="nav navbar-nav">
+                    <li><a class="navbar-brand bigbrand" href="{% url 'index' %}">Olissipa</a></li>
+                    <li><a href="{% url 'about'%}">{% trans 'About' %}</a></li>
+
+                </ul>
+                <div class="btn-group" style="position:absolute;top:10px;right:30px;">
+                    <button class="btn btn-default" type="button"><a href="/languages/set_language_en/">EN</a></button>
+                    <button data-toggle="dropdown"  class="btn btn-default dropdown-toggle" type="button"><span class="caret"></span></button>
+                        <ul class="dropdown-menu"style="min-width: 50px!important;">
+                          <li><a href="/languages/set_language_pt/"">PT</a></li>
+                        </ul>
+                        {{ LANGUAGE_CODE }}
+
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="container">
+                             <div style="position:absolute;top:17px;right:230px;"> {{ request.user }}</div>
+                                <a class='btn btn-default' style="position:absolute;top:10px;right:130px;" href="/accounts/logout">Logout</a></p>                    
+                    </div>
+                {% else %}
+                    <div class="container">
+                             <p><a class='btn btn-default' style="position:absolute;top:10px;right:240px;" href="/accounts/login">{% trans 'Login' %}<a class='btn btn-default' style="position:absolute;top:10px;right:150px;" href="/accounts/signup">{% trans 'Sign up' %}</a> </p>
+                    </div>
+                {% endif %}
+            </nav>
+            <!-- /#Topbar menu -->
+        </div> <!-- /#wrapper -->
+
+        <!-- Main section -->
+        <div role="main" class="main">       
+            <div style="clear:both; height:20px;"></div>
+            <div class="container">
+                <div class="col-md-12">  
+                    {% block content %}
+                    {% endblock %}          
+                </div>                              
+            <div style="clear:both; height:30px;"></div>              
+        </div> <!-- /#main -->
+        
+      
+        <!-- Footer -->
+
+              <footer id="footer" class="m-none" >
+                <div class="footer-copyright pt-md pb-md">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 center m-none">
+
+                                <h5 style="color:#ffffff;text-align:left;margin: 0 0 0 0;">
+                                    <b>OLISSIPA</b> {% trans 'Learning Applications' %}</h5>
+                                <p>© <script type="text/javascript"> document.write(new Date().getFullYear()); </script> | {% trans 'All rights reserved' %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer> <!-- Footer -->
+         
+    </div> <!-- /#body -->
+    
+    <!-- Vendor -->
+    <script src='{% static "/vendor/jquery/jquery.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.appear/jquery.appear.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.easing/jquery.easing.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery-cookie/jquery-cookie.min.js" %}'></script>
+    <script src='{% static "/vendor/bootstrap/js/bootstrap.min.js" %}'></script>
+    <script src='{% static "/vendor/common/common.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.validation/jquery.validation.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.gmap/jquery.gmap.min.js" %}'></script>
+    <script src='{% static "/vendor/jquery.lazyload/jquery.lazyload.min.js" %}'></script>
+    <script src='{% static "/vendor/isotope/jquery.isotope.min.js" %}'></script>
+    <script src='{% static "/vendor/owl.carousel/owl.carousel.min.js" %}'></script>
+    <script src='{% static "/vendor/magnific-popup/jquery.magnific-popup.min.js" %}'></script>
+    <script src='{% static "/vendor/vide/vide.min.js"></script>
+    
+    <!-- Theme Base, Components and Settings -->
+    <script src={% static "/js/theme.js" %}'></script>
+    
+    <!-- Current Page Vendor and Views -->
+    <script src='{% static "/vendor/rs-plugin/js/jquery.themepunch.tools.min.js" %}'></script>
+    <script src='{% static "/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js" %}'></script>
+
+    <!-- Current Page Vendor and Views -->
+    <script src='{% static "/js/views/view.contact.js" %}'></script>
+
+    
+    
+    <!-- Theme Custom -->
+    <script src='{% static "/js/custom.js" %}'></script>
+    
+    <!-- Theme Initialization Files -->
+    <script src='{% static "/js/theme.init.js" %}'></script>
+
+
+      <!-- load jquery -->
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+      <!-- load cubeportfolio -->
+      <script type="text/javascript" src='{% static "/plugins/cubeportfolio/cubeportfolio/js/jquery.cubeportfolio.min.js" %}'></script>
+
+      <!-- init cubeportfolio -->
+      <script type="text/javascript" src='{% static "/plugins/cubeportfolio/js/main.js" %}'></script>
+
+
+      <script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+      var trigger = $('.hamburger'),
+          overlay = $('.overlay'),
+         isClosed = false;
+
+        trigger.click(function () {
+          hamburger_cross();      
+        });
+
+        function hamburger_cross() {
+
+          if (isClosed == true) {          
+            overlay.hide();
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+            isClosed = false;
+          } else {   
+            overlay.show();
+            trigger.removeClass('is-closed');
+            trigger.addClass('is-open');
+            isClosed = true;
+          }
+      }
+      
+      $('[data-toggle="offcanvas"]').click(function () {
+            $('#wrapper').toggleClass('toggled');
+      });  
+    });
+  </script>
+
+
+  </body>
+</html>

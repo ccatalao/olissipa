@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-25 20:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: en_US\n"
+"X-Source-Language: C\n"
+
+#: views.py:14
+msgid "AI for a sustainable world"
+msgstr "Inteligência Artificial para um mundo mais inclusivo"
+
+#: views.py:15
+msgid "Learning Applications"
+msgstr "Aplicações Pedagógicas"
+
+#: views.py:15
+msgid "Still in a development phase, Olissipa is a platform to make artificial inteligence and machine learning accessible to all, and specially to those who do not have coding skills."
+msgstr "Ainda em fase de desenvolvimento, Olissipa é uma plataforma concebida para tornar a inteligência artificial acessivel a todos, e especialmente aos que não sabem programar computadores."
+
+#: views.py:15
+msgid "Olissipa is a machine that is being trained to to help people design AI applications for an inclusive and sustainable world."
+msgstr "Olissipa é uma máquina que está a ser treinada para aprender e ensinar a usar a tecnologia para uma sociedade mais inclusiva e sustentável."
+
+#: views.py:15
+msgid "Please sign in, and we will keep you informed of our most recent developments."
+msgstr "Registe-se para acompanhar os desenvolvimentos mais recentes."
+
+#: base.html:105
+msgid "About Olissipa"
+msgstr "Sobre Olissipa"
+
+#: base.html:105
+msgid "Login"
+msgstr "Entrar"
+
+#: base.html:105
+msgid "About"
+msgstr "Sobre"
+
+#: base.html:105
+msgid "Sign up"
+msgstr "Registar"
+
+#: base.html:105
+msgid "All rights reserved"
+msgstr "Todos os direitos reservados"
+

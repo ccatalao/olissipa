@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+
+<!-- Access Django translation tags -->
+{% load i18n %}
+
+{% block content %}
+
+{{ request.LANGUAGE_CODE}}
+<div class='row'>
+	<div class='col-sm-10 col-sm-offset-1'>
+		<div class='jumbotron'>
+			<h3>{% trans 'About Olissipa' %}</h3>
+			<br><p>{% trans 'Still in a development phase, Olissipa is a platform to make artificial inteligence and machine learning accessible to all, and specially to those who do not have coding skills.' %}</p>
+			<p>{% trans 'Olissipa is a machine that is being trained to to help people design AI applications for an inclusive and sustainable world.' %}</p>
+			<p>{% trans 'Please sign in, and we will keep you informed of our most recent developments.' %}</p>
+
+			</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %} 
